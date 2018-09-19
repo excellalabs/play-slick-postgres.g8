@@ -6,9 +6,24 @@
 # An example controller showing a sample home page
 # GET     /                           controllers.HomeController.index
 
+###
+# summary: Get a message
+# responses:
+#   200:
+#     schema:
+#       $"$"$ref: '#/definitions/models.Message'
+###
+GET     /message/                        controllers.MessageController.getMessage
+
+### NoDocs ###
 GET     /swagger.json                   controllers.Application.redirectApi
-GET     /api/                           controllers.Assets.at(path="/public/swagger-ui", file="index.html")
-GET     /api/*file                      controllers.Assets.at(path="/public/swagger-ui", file)
+
+### NoDocs ###
+GET     /docs/                          controllers.Assets.at(path="/public/swagger-ui", file="index.html")
+
+### NoDocs ###
+GET     /docs/*file                     controllers.Assets.at(path="/public/swagger-ui", file)
 
 # Map static resources from the /public folder to the /assets URL path
+### NoDocs ###
 GET /assets/*file controllers.Assets.versioned(path="/public", file: Asset)

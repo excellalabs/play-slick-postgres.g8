@@ -1,10 +1,10 @@
 package controllers
 
-import play.api._
+import javax.inject.{Inject, Singleton}
 import play.api.mvc._
-import models._
 
-object Application extends Controller {
+@Singleton
+class Application @Inject() (cc: ControllerComponents) extends AbstractController(cc) {
   def redirectApi = Action {
     Redirect(url = "/assets/lib/swagger-ui/index.html", queryString = Map("url" -> Seq("/swagger.json")))
   }
