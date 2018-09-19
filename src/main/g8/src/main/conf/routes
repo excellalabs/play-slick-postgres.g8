@@ -6,5 +6,9 @@
 # An example controller showing a sample home page
 # GET     /                           controllers.HomeController.index
 
+GET     /swagger.json                   controllers.Application.redirectApi
+GET     /api/                           controllers.Assets.at(path="/public/swagger-ui", file="index.html")
+GET     /api/*file                      controllers.Assets.at(path="/public/swagger-ui", file)
+
 # Map static resources from the /public folder to the /assets URL path
 GET /assets/*file controllers.Assets.versioned(path="/public", file: Asset)
