@@ -1,7 +1,7 @@
 name := "$name$"
 version := "1.0-SNAPSHOT"
 organization := "$organization$"
-scalaVersion := "2.12.3"
+scalaVersion := "2.12.6"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala, SwaggerPlugin)
 
