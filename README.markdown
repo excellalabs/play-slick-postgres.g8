@@ -10,7 +10,4 @@ To get started:
 6. At sbt prompt, run `compile` then `run`
 7. Check localhost:9000/api-docs/
 
-Note: The IDEA libraries definition is looking for Scala 2.12.6. You may need to update this definition depending
-on any errors your IDE gives you.
-
 Written in 2018 by Dale Gartman <dale.gartman@excella.com>
