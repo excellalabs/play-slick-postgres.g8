@@ -1,7 +1,7 @@
 import scala.concurrent.Future
 import org.scalatestplus.play.PlaySpec
 import play.api.mvc.{Result, Results}
-import play.api.test._
+import play.api.test.FakeRequest
 import play.api.test.Helpers._
 import controllers.MessageController
 
@@ -13,7 +13,7 @@ class MessageControllerSpec extends PlaySpec with Results {
       val bodyText: String = contentAsString(result)
       status(result) mustEqual OK
       contentType(result) mustEqual Some("application/json")
-      bodyText must include "message"
+      bodyText must include("message")
     }
   }
 }
