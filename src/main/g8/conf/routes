@@ -17,7 +17,7 @@
 GET     /api/message/               controllers.MessageController.getMessage
 
 ### NoDocs ###
-GET     /api-docs/                  controllers.Application.redirectApi
+GET     /api-docs/                  controllers.docs.Application.redirectApi
 
 ### NoDocs ###
 GET   /api-docs/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)

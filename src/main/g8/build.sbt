@@ -21,10 +21,9 @@ libraryDependencies ++= Seq(
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature",
   "-language:postfixOps", "-language:reflectiveCalls")
 
-coverageExcludedPackages := "" // CHANGE ME
+coverageExcludedPackages := "<empty>;controllers\\.docs\\..*;router\\..*"
 coverageMinimum := 75
 coverageFailOnMinimum := true
 
-coverageEnabled.in(Test, test) := true
 scalastyleFailOnError := true
 scalastyleFailOnWarning := true
