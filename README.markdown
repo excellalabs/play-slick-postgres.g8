@@ -2,8 +2,9 @@
 
 ## What is it?
 A Giter8 seed (template) for standing up Play Framework (2.6.x) in Scala with Slick and Postgres, including Evolutions.
-The seed will generate a working sample app with Swagger UI API documentation that you can then update to suit your needs.
-It includes a few helpful test libraries as well as Statement Coverage testing, and tests are provided for the built-in example.
+The seed will generate a working sample app that you can then update to suit your needs.
+It includes a Swagger UI for API documentation, a few helpful test libraries, and Statement Coverage testing.
+Tests are included for the example API.
 
 ## How do I use it?
 
