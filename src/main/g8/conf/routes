@@ -12,7 +12,7 @@
 #   200:
 #     description: Successfully retrieved a message
 #     schema:
-#       $ref: '#/definitions/models.Message'
+#       $"$"$ref: '#/definitions/models.Message'
 ###
 GET     /api/message/               controllers.MessageController.getMessage
 
