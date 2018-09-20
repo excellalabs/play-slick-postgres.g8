@@ -8,6 +8,8 @@ To get started:
 4. Navigate to the directory where you set up the project.
 5. Run `sbt`
 6. At sbt prompt, run `compile` then `run`
-7. Check localhost:9000/api-docs/
+8. Check localhost:9000/api-docs/
+
+To run tests, run `test` at the sbt prompt.
 
 Written in 2018 by Dale Gartman <dale.gartman@excella.com>
