@@ -12,4 +12,10 @@ To get started:
 
 To run tests, run `test` at the sbt prompt.
 
+To run Scala style checks and tests and generate a coverage report,
+run `sbt clean scalastyle coverage test coverageReport`.
+
+If packaging or distributing afterward, run `sbt clean test`
+(scoverage might leave behind problematic artifacts in distributions if not cleaned).
+
 Written in 2018 by Dale Gartman <dale.gartman@excella.com>
