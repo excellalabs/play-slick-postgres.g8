@@ -10,13 +10,13 @@ import play.api.inject.guice.GuiceApplicationBuilder
 
 abstract class SlickInMemorySpec extends PlaySpec with GuiceOneAppPerSuite with BeforeAndAfter {
   implicit override lazy val app : Application = {
-    val dbName = s"play-test-${scala.util.Random.nextInt()}"
-    val dbUrl = s"jdbc:h2:mem:$dbName;MODE=PostgreSQL;DATABASE_TO_UPPER=false"
+    val dbName = s"play-test-$"$"${scala.util.Random.nextInt()}"
+    val dbUrl = s"jdbc:h2:mem:$"$"$dbName;MODE=PostgreSQL;DATABASE_TO_UPPER=false"
 
     new GuiceApplicationBuilder()
       .configure(Map(
         "slick.dbs.default" -> Map(
-          "profile" -> "slick.jdbc.H2Profile$",
+          "profile" -> "slick.jdbc.H2Profile$"$"$",
           "db" -> Map(
             "driver" -> "org.h2.Driver",
             "url" -> dbUrl
