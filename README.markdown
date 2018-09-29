@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/excellaco/play-slick-postgres.g8.svg?branch=master)](https://travis-ci.org/excellaco/play-slick-postgres.g8)
+
 # play-slick-postgres.g8
 
 ## What is it?
