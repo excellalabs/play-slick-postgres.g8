@@ -1,33 +1,27 @@
 package modules
 
-import java.io.{FileInputStream, InputStream}
-import javax.inject.{Inject, Provider, Singleton}
+import java.nio.charset.StandardCharsets
 
-import play.api.db.DBApi
-import play.api.{Configuration, Environment}
-//import play.Environment
-import play.api.db.evolutions._
-import play.api.inject.{Injector, Module}
-import play.api.libs.Collections
-import play.core.WebCommands
+import javax.inject.{Inject, Singleton}
 import org.apache.commons.io.FileUtils
+import play.api.Environment
+import play.api.db.evolutions._
+import play.api.inject.{SimpleModule, _}
+import play.api.libs.Collections
 
 /**
   * Default module for evolutions API.
   */
-class EvolutionsModule extends Module {
-  def bindings(environment: Environment, configuration: Configuration) = {
-    Seq(
-      bind[EvolutionsConfig].toProvider[DefaultEvolutionsConfigParser],
-      bind[EvolutionsReader].to[CustomEvolutionsReader],
-      bind[EvolutionsApi].to[DefaultEvolutionsApi],
-      bind[ApplicationEvolutions].toProvider[ApplicationEvolutionsProvider].eagerly
-    )
-  }
-}
+class EvolutionsModule extends SimpleModule(
+  bind[EvolutionsConfig].toProvider[DefaultEvolutionsConfigParser],
+  bind[EvolutionsReader].to[CustomEvolutionsReader],
+  bind[EvolutionsApi].to[DefaultEvolutionsApi],
+  bind[ApplicationEvolutions].toProvider[ApplicationEvolutionsProvider].eagerly
+)
 
 /**
   * Based on Evolution's sources
+  *
   * @param environment
   */
 @Singleton
@@ -38,6 +32,7 @@ class CustomEvolutionsReader @Inject()(environment: Environment) extends Evoluti
     *
     * @param db the database name
     */
+  // scalastyle:off method.length
   def evolutions(db: String): Seq[Evolution] = {
 
     val upsMarker = """^#.*!Ups.*$"$"$""".r
@@ -73,7 +68,7 @@ class CustomEvolutionsReader @Inject()(environment: Environment) extends Evoluti
     sqlFiles.zip(1 to sqlFiles.size)
       .map {
         case (file, revision) => {
-          val script = FileUtils.readFileToString(file)
+          val script = FileUtils.readFileToString(file, StandardCharsets.UTF_8)
           val parsed = Collections.unfoldLeft(("", script.split('\\n').toList.map(_.trim))) {
             case (_, Nil) => None
             case (context, lines) => {
@@ -92,4 +87,5 @@ class CustomEvolutionsReader @Inject()(environment: Environment) extends Evoluti
         }
       }
   }
+  // scalastyle:on method.length
 }
