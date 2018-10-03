@@ -16,9 +16,10 @@ libraryDependencies ++= Seq(
   "org.postgresql" % "postgresql" % "42.2.2",
   "org.webjars" % "swagger-ui" % "3.13.3",
   "com.h2database" % "h2" % "1.4.197" % Test,
+  "commons-io" % "commons-io" % "2.6",
   "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.2" % Test,
   "com.typesafe.akka" %% "akka-testkit" % "2.5.11" % Test,
-  "org.mockito" % "mockito-core" % "2.18.0" % Test,
+  "org.mockito" % "mockito-core" % "2.18.0" % Test
 )
 scalacOptions ++= Seq("-unchecked", "-deprecation", "-feature",
   "-language:postfixOps", "-language:reflectiveCalls")
