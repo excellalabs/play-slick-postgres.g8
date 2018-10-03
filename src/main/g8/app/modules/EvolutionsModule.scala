@@ -40,8 +40,8 @@ class CustomEvolutionsReader @Inject()(environment: Environment) extends Evoluti
     */
   def evolutions(db: String): Seq[Evolution] = {
 
-    val upsMarker = """^#.*!Ups.*$""".r
-    val downsMarker = """^#.*!Downs.*$""".r
+    val upsMarker = """^#.*!Ups.*$"$"$""".r
+    val downsMarker = """^#.*!Downs.*$"$"$""".r
 
     val UPS = "UPS"
     val DOWNS = "DOWNS"
