@@ -11,7 +11,7 @@ Tests are included for the example API.
 ## How do I use it?
 
 ### Quickstart
-1. Set up a Postgres database on localhost.
+1. Set up a Postgres database on localhost. If you don't want to install Postgres, you can use a docker image by following the instructions here: [Docker Hub Link](https://hub.docker.com/_/postgres/).
 2. Open a terminal and navigate to the parent directory where you want to create the project.
 3. Execute `sbt new excellaco/play-slick-postgres.g8` and enter the desired parameters
 (example DB URL: localhost/playdb)
