@@ -14,7 +14,7 @@
 #     schema:
 #       $"$"$ref: '#/definitions/models.Message'
 ###
-GET     /api/message/               controllers.MessageController.getMessage
+GET     /api/message                controllers.MessageController.getMessage
 
 ###
 # summary: Get a list of all products
@@ -29,11 +29,11 @@ GET     /api/message/               controllers.MessageController.getMessage
 GET     /api/product/all            controllers.ProductController.getAll
 
 ### NoDocs ###
-GET     /api-docs/                  controllers.docs.Application.redirectApi
+GET     /api-docs                   controllers.docs.Application.redirectApi
 
 ### NoDocs ###
-GET   /api-docs/*file        controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
+GET     /api-docs/*file             controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
 
 # Map static resources from the /public folder to the /assets URL path
 ### NoDocs ###
-GET /assets/*file controllers.Assets.versioned(path="/public", file: Asset)
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
