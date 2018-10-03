@@ -16,6 +16,18 @@
 ###
 GET     /api/message/               controllers.MessageController.getMessage
 
+###
+# summary: Get a list of all products
+# responses:
+#   200:
+#     description: Successfully listed all products
+#     schema:
+#       type: array
+#       items:
+#           $"$"$ref: '#/definitions/models.Product'
+###
+GET     /api/product/all            controllers.ProductController.getAll
+
 ### NoDocs ###
 GET     /api-docs/                  controllers.docs.Application.redirectApi
 
