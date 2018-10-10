@@ -27,13 +27,20 @@ Tests are included for the example API.
 To run tests, run `test` at the sbt prompt.
 
 To run Scala style and format checks, run tests, and generate a coverage report, within sbt:
-`> clean
-> scalastyle
-> scalafmt::test
-> coverage
-> test
-> coverageReport
-> coverageOff`
+
+`> clean`
+
+`> scalastyle`
+
+`> scalafmt::test`
+
+`> coverage`
+
+`> test`
+
+`> coverageReport`
+
+`> coverageOff`
 
 The last step is important (scoverage might cause issues in distributions if left on).
 If you want to be extra careful, run a `clean` as well.
