@@ -6,6 +6,7 @@
 A Giter8 seed (template) for standing up Play Framework (2.6.x) in Scala with Slick and Postgres, including Evolutions.
 The seed will generate a working sample app that you can then update to suit your needs.
 It includes a Swagger UI for API documentation, a few helpful test libraries, and Statement Coverage testing.
+Scalafmt is run in the compile stage, with the default Scalafmt settings.
 Tests are included for the example API.
 
 ## How do I use it?
@@ -25,12 +26,21 @@ Tests are included for the example API.
 ### Running Tests
 To run tests, run `test` at the sbt prompt.
 
-To run Scala style checks and tests and generate a coverage report,
-run `sbt clean scalastyle coverage test coverageReport`.
+To run Scala style and format checks, run tests, and generate a coverage report, within sbt:
+`> clean
+> scalastyle
+> scalafmt::test
+> coverage
+> test
+> coverageReport
+> coverageOff`
 
-**Careful!**
-If packaging or distributing afterward, run `sbt clean test`
-(scoverage might leave behind problematic artifacts in distributions if not cleaned).
+The last step is important (scoverage might cause issues in distributions if left on).
+If you want to be extra careful, run a `clean` as well.
+
+### My build is failing! Help!
+If your build fails and it's not due to a compilation error, you may want to check
+if the style and coverage settings are too stringent for you.
 
 -----
 Written in 2018 by Dale Gartman <dale.gartman@excella.com>
