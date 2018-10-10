@@ -8,6 +8,8 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala, SwaggerPlugin)
 
 swaggerDomainNameSpaces := Seq("models")
 
+scalaSource in Test := baseDirectory.value / "tests"
+
 libraryDependencies ++= Seq(
   guice,
   ws,

@@ -1,0 +1,6 @@
+> g8Test
+> scalastyle
+> coverage
+> test
+> coverageoff
+> coverageReport
