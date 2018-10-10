@@ -21,21 +21,25 @@ trait ProductsComponent { self: HasDatabaseConfigProvider[JdbcProfile] =>
 
     // scalastyle:off magic.number
     def sku: Rep[String] = column[String]("sku", O.Length(31, varying = true))
-    def name: Rep[String] = column[String]("name", O.Length(127, varying = true))
-    def description: Rep[String] = column[String]("description", O.Length(511, varying = true))
+    def name: Rep[String] =
+      column[String]("name", O.Length(127, varying = true))
+    def description: Rep[String] =
+      column[String]("description", O.Length(511, varying = true))
     // scalastyle:on magic.number
 
     // scalastyle:off method.name
-    override def * : ProvenShape[Product] = (id.?, sku, name, description) <> (Product.tupled, Product.unapply)
+    override def * : ProvenShape[Product] =
+      (id.?, sku, name, description) <> (Product.tupled, Product.unapply)
     // scalastyle: on method.name
   }
 }
 
 @Singleton()
-class ProductsDao @Inject()(protected val dbConfigProvider: DatabaseConfigProvider)
-                           (implicit executionContext: ExecutionContext)
-  extends ProductsComponent
-  with HasDatabaseConfigProvider[JdbcProfile] {
+class ProductsDao @Inject()(
+    protected val dbConfigProvider: DatabaseConfigProvider)(
+    implicit executionContext: ExecutionContext)
+    extends ProductsComponent
+    with HasDatabaseConfigProvider[JdbcProfile] {
   import profile.api._
 
   val products = TableQuery[ProductTable]

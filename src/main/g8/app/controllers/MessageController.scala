@@ -6,7 +6,8 @@ import play.api.libs.json.{Json, Format}
 import play.api.mvc._
 
 @Singleton()
-class MessageController @Inject() (cc: ControllerComponents) extends AbstractController(cc) {
+class MessageController @Inject()(cc: ControllerComponents)
+    extends AbstractController(cc) {
   implicit val fmt: Format[Message] = Json.format[Message]
 
   def getMessage: Action[AnyContent] = Action {
