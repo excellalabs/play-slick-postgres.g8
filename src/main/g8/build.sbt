@@ -10,7 +10,8 @@ swaggerDomainNameSpaces := Seq("models")
 
 /*
 * Workaround for https://github.com/sbt/sbt/issues/630 when running travis tests on the template.
-* If desired, you can remove this line and rename the tests/ folder to test/
+* If desired, you can remove this line and rename the /tests/ folder to /test/
+* You will need to do something different with the scripted test file /test
 **/
 scalaSource in Test := baseDirectory.value / "tests"
 
@@ -38,5 +39,3 @@ scalastyleFailOnError := true
 scalastyleFailOnWarning := true
 
 scalafmtOnCompile in Compile := true
-scalafmtOnCompile in Test := false
-scalafmtTestOnCompile in Test := true

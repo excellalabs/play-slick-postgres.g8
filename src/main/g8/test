@@ -1,4 +1,5 @@
 > scalastyle
+> scalafmt::test
 > coverage
 > test
 > coverageOff
