@@ -38,4 +38,5 @@ scalastyleFailOnError := true
 scalastyleFailOnWarning := true
 
 scalafmtOnCompile in Compile := true
+scalafmtOnCompile in Test := false
 scalafmtTestOnCompile in Test := true

@@ -37,6 +37,7 @@ class CustomEvolutionsReader @Inject()(environment: Environment)
     * @param db the database name
     */
   // scalastyle:off method.length
+  // scalastyle:off cyclomatic.complexity
   def evolutions(db: String): Seq[Evolution] = {
 
     val upsMarker = """^#.*!Ups.*$"$"$""".r
@@ -47,9 +48,8 @@ class CustomEvolutionsReader @Inject()(environment: Environment)
     val UNKNOWN = "UNKNOWN"
 
     val mapUpsAndDowns: PartialFunction[String, String] = {
-      case upsMarker() => UPS
+      case upsMarker()   => UPS
       case downsMarker() => DOWNS
-      case _ => UNKNOWN
       case _             => UNKNOWN
     }
 
@@ -106,5 +106,6 @@ class CustomEvolutionsReader @Inject()(environment: Environment)
         }
       }
   }
+  // scalastyle:on cyclomatic.complexity
   // scalastyle:on method.length
 }
