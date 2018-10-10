@@ -8,6 +8,12 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala, SwaggerPlugin)
 
 swaggerDomainNameSpaces := Seq("models")
 
+/*
+* Workaround for https://github.com/sbt/sbt/issues/630 when running travis tests on the template.
+* If desired, you can remove this line and rename the tests/ folder to test/
+**/
+scalaSource in Test := baseDirectory.value / "tests"
+
 libraryDependencies ++= Seq(
   guice,
   ws,

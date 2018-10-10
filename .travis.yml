@@ -11,8 +11,8 @@ jdk:
   - oraclejdk8
 
 script:
-  - rm -rf src/main/g8/test # https://github.com/sbt/sbt/issues/630
   ## This runs the template with the default parameters, and runs test within the templated app.
+  ## The project/giter8.test file is used to determine what commands to pass to sbt.
   - sbt -Dfile.encoding=UTF8 -J-XX:ReservedCodeCacheSize=256M test g8Test
 
   # Tricks to avoid unnecessary cache updates

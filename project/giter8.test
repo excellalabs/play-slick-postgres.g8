@@ -1,0 +1,5 @@
+> scalastyle
+> coverage
+> test
+> coverageOff
+> coverageReport
