@@ -36,3 +36,6 @@ coverageFailOnMinimum := true
 
 scalastyleFailOnError := true
 scalastyleFailOnWarning := true
+
+scalafmtOnCompile in Compile := true
+scalafmtTestOnCompile in Test := true
