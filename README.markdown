@@ -14,7 +14,7 @@ Tests are included for the example API.
 ### Quickstart
 1. Set up a Postgres database on localhost. If you don't want to install Postgres, you can use a docker image by following the instructions here: [Docker Hub Link](https://hub.docker.com/_/postgres/).
 2. Open a terminal and navigate to the parent directory where you want to create the project.
-3. Execute `sbt new excellaco/play-slick-postgres.g8` and enter the desired parameters
+3. Execute `sbt new excellalabs/play-slick-postgres.g8` and enter the desired parameters
 (example DB URL: localhost/playdb)
 4. Navigate to the directory where you set up the project.
 5. Run `sbt` to open the sbt prompt.
