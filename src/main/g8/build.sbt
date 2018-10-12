@@ -39,3 +39,4 @@ scalastyleFailOnError := true
 scalastyleFailOnWarning := true
 
 scalafmtOnCompile in Compile := true
+ignoreErrors in (ThisBuild, scalafmt) := false // ignore errors in scalafmt itself
