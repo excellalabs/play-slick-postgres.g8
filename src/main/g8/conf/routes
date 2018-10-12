@@ -29,7 +29,7 @@ GET     /api/message                controllers.MessageController.getMessage
 GET     /api/product/all            controllers.ProductController.getAll
 
 ### NoDocs ###
-GET     /api-docs                   controllers.docs.Application.redirectApi
+GET     /api-docs                   controllers.Default.redirect(to="/assets/lib/swagger-ui/index.html?url=/assets/swagger.json")
 
 ### NoDocs ###
 GET     /api-docs/*file             controllers.Assets.at(path:String="/public/lib/swagger-ui", file:String)
